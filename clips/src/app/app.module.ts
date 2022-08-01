@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { UserModule } from './user/user.module';
 import { NavComponent } from './nav/nav.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +16,8 @@ import { NavComponent } from './nav/nav.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    UserModule
+    UserModule,
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
