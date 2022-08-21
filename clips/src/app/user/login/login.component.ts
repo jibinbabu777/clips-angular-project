@@ -11,6 +11,10 @@ export class LoginComponent  {
     email : '',
     password : ''
   }
+  login(){
+    console.log("submitted");
+  }
+  
 
   formGroup = new FormGroup({
 
