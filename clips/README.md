@@ -28,3 +28,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 ng add @angular/fire - To setup firebase database
+
+ng g class user/validators/RegisterValidators - create class

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
+import { RegisterValidators } from '../validators/register-validators';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -30,7 +31,7 @@ registerForm = new FormGroup({
   password : this.password,
   confirm_password :this.confirm_password,
   phonenumber : this.phonenumber
-})
+}, RegisterValidators.match)
 
 showAlert = false;
 alertColor = "blue";
