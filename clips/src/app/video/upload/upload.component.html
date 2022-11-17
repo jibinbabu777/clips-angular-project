@@ -3,7 +3,9 @@
       <div class="font-bold mb-6">Upload Video</div>
 
       <!-- Upload Dropbox -->
-      <div app-event-blocker
+      <div 
+      *ngIf="!nextStep; else showForm"
+      app-event-blocker
       (dragend)="isDragover = false "
       (dragover)="isDragover = true"
       (dragenter)="isDragover = true"
@@ -19,10 +21,15 @@
       </div>
 
       <!-- Video Editor -->
-      <div>
+      <ng-template #showForm>
+        <app-alert *ngIf="showAlert" [color]="alertColor"><p class="text-center">
+          {{alertMsg}}
+        </p>
+      <p *ngIf="showPercentage" class="text-center">{{percentage | percent}}</p>
+      </app-alert>
 
         <!-- Form -->
-        <form>
+        <form [formGroup]="uploadForm" (ngSubmit)="uploadFile()">
           <!-- Screenshots -->
           <h2 class="mb-4 text-xl">Select a Thumbnail</h2>
           <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
@@ -40,16 +47,24 @@
           <!-- Title -->
           <div class="mt-4">
             <label class="block text-xl mb-4">Title</label>
-            <input type="text" class="block w-full py-1.5 px-3 text-gray-200 border border-gray-400 transition
-            duration-500 focus:outline-none rounded bg-transparent focus:border-indigo-400">
+            <!-- <input type="text" class="block w-full py-1.5 px-3 text-gray-200 border border-gray-400 transition
+            duration-500 focus:outline-none rounded bg-transparent focus:border-indigo-400"> -->
+            <app-input [control]="title" placeholder="Enter title">Publish</app-input>
           </div>
 
           <div class="mt-4 text-right">
-            <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none">
+            <button 
+            [disabled]="inSubmission"
+            [ngClass]="{
+              'opacity-50': inSubmission,
+              'hover:bg-indigo-400' : !inSubmission
+            }"
+            type="submit" 
+            class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none">
               Publish
             </button>
           </div>
         </form>
-      </div>
+      </ng-template>
     </div>
   </section>
