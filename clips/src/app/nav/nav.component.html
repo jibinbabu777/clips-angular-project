@@ -1,15 +1,15 @@
   <!-- Header -->
-  <header id="header" class="bg-secondary">
+  <header id="header" class="nav-color">
     <nav class="container mx-auto flex justify-start items-center py-8 px-4">
       <!-- App Name -->
-      <a class="text-3xl text-indigo-400 font-bold uppercase mr-4" routerLink="">Clipz</a>
+      <a class="text-3xl  font-bold  ml-6 shadow-sm text-shadow" routerLink="">PlayVerse</a>
 
-      <div class="flex flex-grow items-center">
+      <div class="flex flex-grow text-right">
         <!-- Primary Navigation -->
-        <ul class="flex flex-row mt-1">
+        <ul class="flex flex-row mt-1 ">
           <!-- Navigation Links -->
           <li *ngIf="!(auth.isAuthenticated$ | async); else authLinks">
-            <a class="px-2" href="#" (click)="openModal($event)">Login / Register</a>
+            <a class="px-10 " href="#" (click)="openModal($event)">Login / Register</a>
           </li>
           <ng-template #authLinks>
             <li>
