@@ -13,6 +13,7 @@
           </li>
           <ng-template #authLinks>
             <li>
+              <!-- routerLinkActiveOptions = {exact: true} is used to avoid partial check -->
               <a class="px-2" routerLink="manage" routerLinkActive="text-indigo-400" [routerLinkActiveOptions]="{exact : true}"
               [queryParams]="{sort: 1}"
               >Manage</a>
