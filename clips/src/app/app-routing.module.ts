@@ -17,12 +17,15 @@ const routes: Routes = [
   {
     path: 'clips/:id',
     component: ClipComponent
-  },{
+  },
+  {
     path : '**',
     component:NotFoundComponent
   }
 
 ];
+
+// wildcard route ** - If a user enters an invalid URL (e.g., /random-path), Angular loads the NotFoundComponent.
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

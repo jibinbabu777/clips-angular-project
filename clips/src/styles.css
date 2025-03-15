@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-    background-color: #161d31;
+    background-color: #000000;
   }
   
   .material-icons.text-base {
@@ -135,8 +135,7 @@ body {
   
   .ghost {
     border-radius: 150px 150px 7px 7px;
-    -webkit-animation: ghost 1.5s ease-in-out alternate infinite;
-            animation: ghost 1.5s ease-in-out alternate infinite;
+    animation: ghost 1.5s ease-in-out alternate infinite;
   }
   
   .corner {
@@ -145,7 +144,6 @@ body {
     background-color: #161d31;
     position: absolute;
     margin-top: 188px; 
-    -webkit-transform: rotate(45deg); 
             transform: rotate(45deg); 
     z-index: -1; 
   }
@@ -165,8 +163,7 @@ body {
     background-color: #161d31;
     position: absolute;
     margin-top: 188px; 
-    -webkit-transform: rotate(45deg) translateX(4px) translateY(4px); 
-            transform: rotate(45deg) translateX(4px) translateY(4px); 
+    transform: rotate(45deg) translateX(4px) translateY(4px); 
   }
   .over.two {
     margin-left: 35px; 
@@ -180,20 +177,10 @@ body {
   
   .ghost-shadow {
     border-radius: 100%;
-    -webkit-animation: shadow 1.5s ease-in-out alternate infinite;
             animation: shadow 1.5s ease-in-out alternate infinite;
   }
   
-  @-webkit-keyframes shadow {
-    0% {
-      -webkit-transform: scale(1) translateY(0px);
-              transform: scale(1) translateY(0px);
-    }
-    100% {
-      -webkit-transform: scale(0.8) translateY(75px);
-              transform: scale(0.8) translateY(75px);
-    }
-  }
+ 
   
   @keyframes shadow {
     0% {
@@ -205,16 +192,7 @@ body {
               transform: scale(0.8) translateY(75px);
     }
   }
-  @-webkit-keyframes ghost {
-    0% {
-      -webkit-transform: scale(1) translateY(0px);
-              transform: scale(1) translateY(0px)
-    }
-    100% {
-      -webkit-transform: scale(1) translateY(-40px);
-              transform: scale(1) translateY(-40px)
-    }
-  }
+
   @keyframes ghost {
     0% {
       -webkit-transform: scale(1) translateY(0px);
